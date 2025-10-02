@@ -1,6 +1,6 @@
 # Server Performance Stats
 
-This project is part of my DevOps learning journet following [roadmap.sh](https://roadmap.sh/projects/server-stats).
+This project is part of my DevOps learning journet following [https://roadmap.sh/projects/server-stats](https://roadmap.sh/projects/server-stats).
 It provides a Bash script ('server-stats.sh') to quickly analyse essential server performance metrics.
 The script is lightweight and can run on any Linux system.
 
