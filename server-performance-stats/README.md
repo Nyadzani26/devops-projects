@@ -37,3 +37,5 @@ chmod +x server server-stats.sh
 
 # Run the script
 ./server-stats.sh
+
+- Link to project [https://roadmap.sh/projects/server-stats]
