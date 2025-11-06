@@ -5,6 +5,10 @@ This repository contains hands-on projects I’m completing as part of my DevOps
 
 The goal of this repo is to **learn by building**, covering everything from Linux basics to advanced DevOps tools like CI/CD, Infrastructure as Code, Containers, Kubernetes, and Cloud.
 
+## 🌐 Live Portfolio
+
+**Visit my portfolio**: [https://nyadzani26.github.io/devops-projects/](https://nyadzani26.github.io/devops-projects/)
+
 ---
 
 ## 📌 Projects
@@ -13,6 +17,7 @@ The goal of this repo is to **learn by building**, covering everything from Linu
 |---|---------|-------------|--------------|
 | 1 | [Server Performance Stats](./server-performance-stats) | Bash script to analyse CPU, memory, disk usage, and top processes. | Linux, Bash, Shell Scripting |
 | 2 | [Log Archive Tool](./log-archive-tool) | CLI to compress logs into timestamped tar.gz archives and record runs; supports destination and retention. | Linux, Bash, tar, cron |
+| 3 | [Portfolio Website](./portfolio) | Professional portfolio with CI/CD deployment to GitHub Pages using GitHub Actions. | HTML, Tailwind CSS, JavaScript, GitHub Actions |
 
 ---
 
