@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gift Nemakonde - DevOps Engineer & ICT Student at Sol Plaatje University. Explore my DevOps projects, skills, and learning journey.">
+    <meta name="author" content="Gift Nemakonde">
+    <title>Gift Nemakonde | DevOps Engineer</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+<body class="bg-gray-50 text-gray-900">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-2xl font-bold text-blue-600">Gift Nemakonde</a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                    <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="#home" class="block text-gray-700 hover:text-blue-600 transition py-2">Home</a>
+                <a href="#about" class="block text-gray-700 hover:text-blue-600 transition py-2">About</a>
+                <a href="#projects" class="block text-gray-700 hover:text-blue-600 transition py-2">Projects</a>
+                <a href="#skills" class="block text-gray-700 hover:text-blue-600 transition py-2">Skills</a>
+                <a href="#contact" class="block text-gray-700 hover:text-blue-600 transition py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+                        Hi, I'm <span class="text-blue-600">Gift Nemakonde</span> 👋
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-700 mb-6">
+                        DevOps Engineer | Cloud Enthusiast | ICT Student
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Final-year student at Sol Plaatje University, passionate about software development, DevOps, and cloud technologies.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold">
+                            View Projects
+                        </a>
+                        <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition font-semibold">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+                        <!-- PLACEHOLDER: Replace with your profile image -->
+                        <img src="images/profile-placeholder.jpg" alt="Gift Nemakonde" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="text-gray-500 text-6xl" style="display:none;">👤</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About Me</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">My DevOps Journey</h3>
+                    <p class="text-gray-700 mb-4">
+                        I'm currently on a journey of learning DevOps, building hands-on projects inspired by 
+                        <a href="https://roadmap.sh/devops" class="text-blue-600 hover:underline" target="_blank">roadmap.sh</a> 
+                        and other resources.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        My goal is to <strong>learn by building</strong>, covering everything from Linux basics to advanced DevOps tools 
+                        like CI/CD, Infrastructure as Code, Containers, Kubernetes, and Cloud.
+                    </p>
+                    
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Goals</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">✓</span>
+                            Build a strong DevOps foundation step by step
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">✓</span>
+                            Showcase real-world projects to strengthen my portfolio
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">✓</span>
+                            Earn DevOps certifications (AWS, AZ-400, Terraform, Kubernetes)
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">✓</span>
+                            Share my learning journey openly with the community
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Projects</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Hands-on DevOps projects covering Linux, automation, CI/CD, and cloud technologies.
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: Server Performance Stats -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="h-48 bg-gray-300 flex items-center justify-center overflow-hidden">
+                        <!-- PLACEHOLDER: Add project screenshot -->
+                        <img src="images/project1-placeholder.jpg" alt="Server Performance Stats" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="text-gray-500 text-5xl" style="display:none;">📊</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Server Performance Stats</h3>
+                        <p class="text-gray-600 mb-4">
+                            Bash script to analyse CPU, memory, disk usage, and top processes.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Linux</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Bash</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Shell Scripting</span>
+                        </div>
+                        <a href="https://github.com/Nyadzani26/devops-projects/tree/main/server-performance-stats" 
+                           target="_blank" 
+                           class="text-blue-600 hover:text-blue-800 font-semibold">
+                            View on GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Log Archive Tool -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="h-48 bg-gray-300 flex items-center justify-center overflow-hidden">
+                        <!-- PLACEHOLDER: Add project screenshot -->
+                        <img src="images/project2-placeholder.jpg" alt="Log Archive Tool" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="text-gray-500 text-5xl" style="display:none;">📦</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Log Archive Tool</h3>
+                        <p class="text-gray-600 mb-4">
+                            CLI to compress logs into timestamped tar.gz archives and record runs; supports destination and retention.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Linux</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Bash</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">tar</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">cron</span>
+                        </div>
+                        <a href="https://github.com/Nyadzani26/devops-projects/tree/main/log-archive-tool" 
+                           target="_blank" 
+                           class="text-blue-600 hover:text-blue-800 font-semibold">
+                            View on GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: GitHub Pages Deployment -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="h-48 bg-gray-300 flex items-center justify-center overflow-hidden">
+                        <!-- PLACEHOLDER: Add project screenshot -->
+                        <img src="images/project3-placeholder.jpg" alt="Portfolio Website" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="text-gray-500 text-5xl" style="display:none;">🚀</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Portfolio Website + CI/CD</h3>
+                        <p class="text-gray-600 mb-4">
+                            Professional portfolio deployed to GitHub Pages using GitHub Actions for continuous deployment.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Tailwind CSS</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">GitHub Actions</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CI/CD</span>
+                        </div>
+                        <a href="https://github.com/Nyadzani26/devops-projects" 
+                           target="_blank" 
+                           class="text-blue-600 hover:text-blue-800 font-semibold">
+                            View on GitHub →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Tech Stack</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Languages & Scripting -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Languages & Scripting</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">Bash</span>
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">Python</span>
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">YAML</span>
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Version Control -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Version Control</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">Git</span>
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">GitHub</span>
+                    </div>
+                </div>
+
+                <!-- Containers & Orchestration -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Containers & Orchestration</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">Docker</span>
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">Kubernetes</span>
+                    </div>
+                </div>
+
+                <!-- CI/CD Tools -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">CI/CD Tools</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">GitHub Actions</span>
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">Jenkins</span>
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">GitLab CI</span>
+                    </div>
+                </div>
+
+                <!-- Infrastructure as Code -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Infrastructure as Code</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">Terraform</span>
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">Ansible</span>
+                    </div>
+                </div>
+
+                <!-- Monitoring & Logging -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Monitoring & Logging</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">Prometheus</span>
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">Grafana</span>
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">ELK/EFK Stack</span>
+                    </div>
+                </div>
+
+                <!-- Cloud Providers -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Cloud Providers</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">AWS</span>
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">Azure</span>
+                        <span class="bg-gray-100 px-4 py-2 rounded-lg font-medium">GCP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Get In Touch</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                I'm currently a final-year ICT student at Sol Plaatje University. Feel free to connect with me!
+            </p>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/gift-nemakonde" 
+                       target="_blank" 
+                       class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition text-center">
+                        <div class="text-4xl mb-3">💼</div>
+                        <h3 class="font-semibold text-gray-900 mb-2">LinkedIn</h3>
+                        <p class="text-sm text-blue-600">Connect with me</p>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/nyadzani26" 
+                       target="_blank" 
+                       class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition text-center">
+                        <div class="text-4xl mb-3">🐙</div>
+                        <h3 class="font-semibold text-gray-900 mb-2">GitHub</h3>
+                        <p class="text-sm text-blue-600">View my code</p>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:giftnyadzani28@gmail.com" 
+                       class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition text-center">
+                        <div class="text-4xl mb-3">✉️</div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Email</h3>
+                        <p class="text-sm text-blue-600">Send a message</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">© 2025 Gift Nemakonde. All rights reserved.</p>
+            <p class="text-gray-400 text-sm">
+                Built with HTML, Tailwind CSS, and deployed with GitHub Actions.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+
