@@ -2,18 +2,18 @@ name: Deploy Portfolio to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
       - 'portfolio/**'
       - '.github/workflows/deploy-portfolio.yml'
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Only allow one deployment at a time
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -43,4 +43,3 @@ jobs:
       
       - name: Output deployment URL
         run: echo "Portfolio deployed to ${{ steps.deployment.outputs.page_url }}"
-
