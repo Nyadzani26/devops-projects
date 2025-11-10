@@ -15,8 +15,7 @@ This portfolio website serves as a central hub for my DevOps projects, including
 
 ## 🚀 Live Site
 
-**URL**: `https://nyadzani26.github.io/devops-projects/`
-
+**URL**: [https://nyadzani26.github.io/devops-projects/](`https://nyadzani26.github.io/devops-projects/)
 ---
 
 ## 🛠️ Technologies
@@ -47,7 +46,7 @@ portfolio/
 
 The website automatically deploys to GitHub Pages when changes are pushed to the `main` branch.
 
-**Workflow**: `.github/workflows/deploy-portfolio.yml`
+**Workflow**: '.github/workflows/deploy-portfolio.yml'
 
 ### Setup
 1. Repository **Settings** → **Pages**
