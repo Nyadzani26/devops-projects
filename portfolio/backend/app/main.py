@@ -1,12 +1,15 @@
 # This is the FASTAPI application entry point
 
-from datetime import timedelta
-from typing import List
+import os, uuid, shutil
+from datetime import datetime, timedelta
+from typing import Optional, List
 
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordRequestForm
+from fastapi import File, UploadFile
 from sqlalchemy.orm import Session
+from starlette.staticfiles import StaticFiles
 
 from app.database import Base, engine, SessionLocal
 from app import models, schemas
@@ -17,6 +20,8 @@ from app.config import settings
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Portfolio Backend", version="1.0.0")
+os.makedirs("static/certificates", exist_ok=True)
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.add_middleware(
     CORSMiddleware,
@@ -58,3 +63,113 @@ def login_for_access_token(
 @app.get("/api/me", response_model=schemas.UserOut)
 def read_me(current_user: models.User = Depends(get_current_user)):
     return current_user
+
+ALLOWED_CONTENT_TYPES = {
+    "application/pdf",
+    "image/jpeg",
+    "image/png",
+    "image/webp"
+}
+MAX_FILE_MB = 10
+
+@app.post("/api/certificates", response_model=schemas.CertificateOut)
+def create_certificate(
+    title: str,
+    issuer: str,
+    issue_date: datetime,
+    expiry_date: Optional[datetime] = None,
+    credential_id: Optional[str] = None,
+    verify_url: Optional[str] = None,
+    tags: Optional[str] = None,
+    image: UploadFile = File(...),
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user)
+):
+    # validating content types
+    if image.content_type not in ALLOWED_CONTENT_TYPES:
+        raise HTTPException(status_code=400, detail="Unsupported file type. Upload PDF or JPG/PNG/WEBP")
+
+    # Safe unique file
+    ext = os.path.splitext(image.filename)[1].lower()
+    unique_name = f"{uuid.uuid4().hex}{ext}"
+    relative_path = os.path.join("static", "certificates", unique_name)
+    abs_path = os.path.join(os.getcwd(), relative_path)
+
+    #save the file
+    with open(abs_path, "wb") as buffer:
+        shutil.copyfileobj(image.file, buffer)
+
+    cert = models.Certificates(
+        title=title.strip(),
+        issuer=issuer.strip(),
+        issue_date = issue_date,
+        expiry_date = expiry_date,
+        credential_id = credential_id.strip() if credential_id else None,
+        verify_url = verify_url.strip() if verify_url else None,
+        image_path = relative_path.replace("\\", "/"),
+        tags = tags.strip() if tags else None,
+    )
+
+    db.add(cert)
+    db.commit()
+    db.refresh(cert)
+    return cert
+
+@app.get("/api/certificates", response_model=List[schemas.CertificateOut])
+def list_certificates(skip: int = 0, limit: int = 50, db: Session = Depends(get_db)):
+    items = db.query(models.Certificates).offset(skip).limit(limit).all()
+    return items
+
+@app.patch("/api/certificates/{cert_id}", response_model=schemas.CertificateOut)
+def update_certificate(
+    cert_id: int,
+    payload: schemas.CertificateUpdate,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    cert = db.query(models.Certificates).filter(models.Certificates.id == cert_id).first()
+    if not cert:
+        raise HTTPException(status_code=404, detail="Certificate not found")
+    
+    # Applying partial updates
+    if payload.title is not None:
+        cert.title = payload.title.strip()
+    if payload.issuer is not None:
+        cert.issuer = payload.issuer.strip()
+    if payload.issue_date is not None:
+        cert.issue_date = payload.issue_date
+    if payload.expiry_date is not None:
+        cert.expiry_date = payload.expiry_date
+    if payload.credential_id is not None:
+        cert.credential_id = payload.credential_id.strip() if payload.credential_id else None
+    if payload.verify_url is not None:
+        cert.verify_url = payload.verify_url
+    if payload.tags is not None:
+        cert.tags = payload.tags.strip() if payload.tags else None
+
+    db.commit()
+    db.refresh(cert)
+    return cert
+
+@app.delete("/api/certificates/{cert_id}")
+def delete_certificate(
+    cert_id: int,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    cert = db.query(models.Certificates).filter(models.Certificates.id == cert_id).first()
+    if not cert:
+        raise HTTPException(status_code=404, detail="Certificate not found")
+    
+    # try to delete the file on disk or ignore if it is missing
+    try:
+        if cert.image_path:
+            abs_path = os.path.join(os.getcwd(), cert.image_path)
+            if os.path.exists(abs_path):
+                os.remove(abs_path)
+    except Exception:
+        pass
+
+    db.delete(cert)
+    db.commit()
+    return {"status": "deleted"}
