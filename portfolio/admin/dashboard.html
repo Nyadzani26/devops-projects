@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,35 +14,49 @@
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .animate-fade-in {
       animation: fadeIn 0.5s ease-out;
     }
-    
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    
+
     .loading-skeleton {
       background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
       background-size: 200% 100%;
       animation: loading 1.5s infinite;
     }
-    
+
     @keyframes loading {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
     }
   </style>
 </head>
+
 <body class="bg-gradient-to-br from-gray-900 to-black min-h-screen text-gray-100 font-sans">
   <!-- Enhanced Header -->
   <header class="border-b border-gray-800 bg-black/80 backdrop-blur-md sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-4">
-          <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+          <div
+            class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
             <i class="fas fa-certificate text-white text-lg"></i>
           </div>
           <div>
@@ -49,13 +64,14 @@
             <p class="text-sm text-gray-400">Manage your credentials and certifications</p>
           </div>
         </div>
-        
+
         <div class="flex items-center space-x-4">
           <div class="hidden sm:flex items-center space-x-2 text-sm text-gray-400">
             <i class="fas fa-user-shield"></i>
             <span>Admin Console</span>
           </div>
-          <button id="logoutBtn" class="flex items-center space-x-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all duration-200 transform hover:-translate-y-0.5">
+          <button id="logoutBtn"
+            class="flex items-center space-x-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all duration-200 transform hover:-translate-y-0.5">
             <i class="fas fa-sign-out-alt"></i>
             <span>Logout</span>
           </button>
@@ -80,67 +96,70 @@
           Supports PDF, JPG, PNG, WEBP
         </div>
       </div>
-      
+
       <form id="createForm" class="grid lg:grid-cols-2 gap-6">
         <!-- Left Column -->
         <div class="space-y-4">
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium text-gray-300 mb-2">Title *</label>
-              <input name="title" placeholder="e.g., AWS Certified Solutions Architect" 
-                     class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" required />
+              <input name="title" placeholder="e.g., AWS Certified Solutions Architect"
+                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                required />
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-300 mb-2">Issuer *</label>
-              <input name="issuer" placeholder="e.g., Amazon Web Services" 
-                     class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" required />
+              <input name="issuer" placeholder="e.g., Amazon Web Services"
+                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                required />
             </div>
           </div>
-          
+
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium text-gray-300 mb-2">Issue Date *</label>
-              <input name="issue_date" type="date" 
-                     class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" required />
+              <input name="issue_date" type="date"
+                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                required />
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-300 mb-2">Expiry Date</label>
-              <input name="expiry_date" type="date" 
-                     class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" />
+              <input name="expiry_date" type="date"
+                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" />
             </div>
           </div>
-          
+
           <div>
             <label class="block text-sm font-medium text-gray-300 mb-2">Credential ID</label>
-            <input name="credential_id" placeholder="Optional credential identifier" 
-                   class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" />
+            <input name="credential_id" placeholder="Optional credential identifier"
+              class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" />
           </div>
-          
+
           <div>
             <label class="block text-sm font-medium text-gray-300 mb-2">Verification URL</label>
-            <input name="verify_url" placeholder="https://verify.example.com/certificate" 
-                   class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" />
+            <input name="verify_url" placeholder="https://verify.example.com/certificate"
+              class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" />
             <div id="verify_url_err" class="text-xs text-red-400 mt-2 flex items-center">
               <i class="fas fa-exclamation-circle mr-1"></i>
               <span></span>
             </div>
           </div>
         </div>
-        
+
         <!-- Right Column -->
         <div class="space-y-4">
           <div>
             <label class="block text-sm font-medium text-gray-300 mb-2">Tags</label>
-            <input name="tags" placeholder="aws, cloud, solutions-architect, professional" 
-                   class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" />
+            <input name="tags" placeholder="aws, cloud, solutions-architect, professional"
+              class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" />
             <p class="text-xs text-gray-500 mt-2">Comma-separated tags for better organization</p>
           </div>
-          
+
           <div>
             <label class="block text-sm font-medium text-gray-300 mb-2">Certificate File *</label>
-            <div class="border-2 border-dashed border-gray-700 rounded-lg p-6 text-center hover:border-blue-500 transition-all duration-200 bg-gray-800/50">
-              <input id="fileInput" name="image" type="file" accept=".pdf,image/*" 
-                     class="hidden" required />
+            <div
+              class="border-2 border-dashed border-gray-700 rounded-lg p-6 text-center hover:border-blue-500 transition-all duration-200 bg-gray-800/50">
+              <input id="fileInput" name="image" type="file" accept=".pdf,image/*" class="hidden" required />
               <div class="cursor-pointer" onclick="document.getElementById('fileInput').click()">
                 <i class="fas fa-cloud-upload-alt text-3xl text-gray-500 mb-3"></i>
                 <p class="text-sm text-gray-400">Click to upload or drag and drop</p>
@@ -158,10 +177,11 @@
             <div id="file_preview" class="mt-4"></div>
           </div>
         </div>
-        
+
         <!-- Submit Button -->
         <div class="lg:col-span-2">
-          <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-200 transform hover:-translate-y-1 hover:shadow-2xl flex items-center justify-center space-x-3">
+          <button type="submit"
+            class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-200 transform hover:-translate-y-1 hover:shadow-2xl flex items-center justify-center space-x-3">
             <i class="fas fa-plus"></i>
             <span>Create Certificate</span>
           </button>
@@ -175,27 +195,28 @@
         <i class="fas fa-filter text-green-400 mr-3"></i>
         Filter Certificates
       </h2>
-      
+
       <form id="filterForm" class="grid md:grid-cols-4 gap-4">
         <div class="relative">
           <i class="fas fa-building absolute left-3 top-3 text-gray-500"></i>
-          <input id="f_issuer" placeholder="Filter by issuer" 
-                 class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-10 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200" />
+          <input id="f_issuer" placeholder="Filter by issuer"
+            class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-10 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200" />
         </div>
-        
+
         <div class="relative">
           <i class="fas fa-tag absolute left-3 top-3 text-gray-500"></i>
-          <input id="f_tag" placeholder="Filter by tag" 
-                 class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-10 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200" />
+          <input id="f_tag" placeholder="Filter by tag"
+            class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-10 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200" />
         </div>
-        
+
         <div class="relative">
           <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
-          <input id="f_q" placeholder="Search titles..." 
-                 class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-10 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200" />
+          <input id="f_q" placeholder="Search titles..."
+            class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-10 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200" />
         </div>
-        
-        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+
+        <button type="submit"
+          class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
           <i class="fas fa-filter"></i>
           <span>Apply Filters</span>
         </button>
@@ -214,7 +235,7 @@
           Loading...
         </div>
       </div>
-      
+
       <div id="list" class="space-y-4">
         <!-- Skeleton loading will be inserted here -->
       </div>
@@ -222,37 +243,45 @@
   </div>
 
   <!-- Enhanced Edit Modal -->
-  <div id="editModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50 transition-opacity duration-300">
-    <div class="bg-gray-900 rounded-2xl shadow-2xl max-w-md w-full border border-gray-800 transform transition-all duration-300 scale-95">
+  <div id="editModal"
+    class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50 transition-opacity duration-300">
+    <div
+      class="bg-gray-900 rounded-2xl shadow-2xl max-w-md w-full border border-gray-800 transform transition-all duration-300 scale-95">
       <div class="p-6 border-b border-gray-800">
         <h3 class="text-xl font-semibold text-white flex items-center">
           <i class="fas fa-edit text-blue-400 mr-3"></i>
           Edit Certificate
         </h3>
       </div>
-      
+
       <div class="p-6 space-y-4">
         <div>
           <label class="block text-sm font-medium text-gray-300 mb-2">Title</label>
-          <input id="edit_title" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" placeholder="Certificate title" />
+          <input id="edit_title"
+            class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+            placeholder="Certificate title" />
         </div>
-        
+
         <div>
           <label class="block text-sm font-medium text-gray-300 mb-2">Tags</label>
-          <input id="edit_tags" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" placeholder="Comma-separated tags" />
+          <input id="edit_tags"
+            class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+            placeholder="Comma-separated tags" />
         </div>
-        
+
         <div id="edit_err" class="text-sm text-red-400 h-5 flex items-center">
           <i class="fas fa-exclamation-circle mr-2"></i>
           <span></span>
         </div>
       </div>
-      
+
       <div class="p-6 border-t border-gray-800 flex justify-end gap-3">
-        <button id="editCancel" class="px-6 py-3 border border-gray-700 text-gray-300 rounded-lg hover:bg-gray-800 transition-all duration-200">
+        <button id="editCancel"
+          class="px-6 py-3 border border-gray-700 text-gray-300 rounded-lg hover:bg-gray-800 transition-all duration-200">
           Cancel
         </button>
-        <button id="editSave" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-200 transform hover:-translate-y-0.5 flex items-center space-x-2">
+        <button id="editSave"
+          class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-200 transform hover:-translate-y-0.5 flex items-center space-x-2">
           <i class="fas fa-save"></i>
           <span>Save Changes</span>
         </button>
@@ -261,17 +290,20 @@
   </div>
 
   <!-- Enhanced Delete Confirm Modal -->
-  <div id="delModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50 transition-opacity duration-300">
-    <div class="bg-gray-900 rounded-2xl shadow-2xl max-w-md w-full border border-gray-800 transform transition-all duration-300 scale-95">
+  <div id="delModal"
+    class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50 transition-opacity duration-300">
+    <div
+      class="bg-gray-900 rounded-2xl shadow-2xl max-w-md w-full border border-gray-800 transform transition-all duration-300 scale-95">
       <div class="p-6 border-b border-gray-800">
         <h3 class="text-xl font-semibold text-white flex items-center text-red-400">
           <i class="fas fa-exclamation-triangle mr-3"></i>
           Delete Certificate
         </h3>
       </div>
-      
+
       <div class="p-6">
-        <p class="text-gray-300 mb-4">Are you sure you want to delete this certificate? This action cannot be undone and the data will be permanently removed.</p>
+        <p class="text-gray-300 mb-4">Are you sure you want to delete this certificate? This action cannot be undone and
+          the data will be permanently removed.</p>
         <div class="bg-red-900/20 border border-red-800 rounded-lg p-4">
           <div class="flex items-center text-red-400">
             <i class="fas fa-info-circle mr-2"></i>
@@ -279,12 +311,14 @@
           </div>
         </div>
       </div>
-      
+
       <div class="p-6 border-t border-gray-800 flex justify-end gap-3">
-        <button id="delCancel" class="px-6 py-3 border border-gray-700 text-gray-300 rounded-lg hover:bg-gray-800 transition-all duration-200">
+        <button id="delCancel"
+          class="px-6 py-3 border border-gray-700 text-gray-300 rounded-lg hover:bg-gray-800 transition-all duration-200">
           Cancel
         </button>
-        <button id="delConfirm" class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all duration-200 transform hover:-translate-y-0.5 flex items-center space-x-2">
+        <button id="delConfirm"
+          class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all duration-200 transform hover:-translate-y-0.5 flex items-center space-x-2">
           <i class="fas fa-trash"></i>
           <span>Delete Permanently</span>
         </button>
@@ -296,45 +330,45 @@
   <script>
     // Enhanced Admin Dashboard JavaScript
     AdminAPI.guard();
-    
+
     const msg = document.getElementById('msg');
     const MAX_FILE_MB = 10;
     const MAX_FILE_BYTES = MAX_FILE_MB * 1024 * 1024;
-    const allowedTypes = ['application/pdf','image/jpeg','image/png','image/webp'];
+    const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'image/webp'];
 
     // Enhanced file preview & validation
     const fileInput = document.getElementById('fileInput');
     const fileErr = document.getElementById('file_err');
     const fileHint = document.getElementById('file_hint');
     const filePrev = document.getElementById('file_preview');
-    
+
     fileInput.addEventListener('change', () => {
       fileErr.querySelector('span').textContent = '';
       filePrev.innerHTML = '';
       const f = fileInput.files && fileInput.files[0];
-      
+
       if (!f) {
         fileHint.querySelector('span').textContent = 'No file selected';
         return;
       }
-      
+
       // Update file hint
       fileHint.querySelector('span').textContent = `${f.name} (${(f.size / 1024 / 1024).toFixed(2)} MB)`;
-      
+
       if (!allowedTypes.includes(f.type)) {
         fileErr.querySelector('span').textContent = 'Unsupported file type. Please upload PDF, JPG, PNG, or WEBP.';
         fileInput.value = '';
         fileHint.querySelector('span').textContent = 'No file selected';
         return;
       }
-      
+
       if (f.size > MAX_FILE_BYTES) {
         fileErr.querySelector('span').textContent = `File too large. Maximum size is ${MAX_FILE_MB}MB.`;
         fileInput.value = '';
         fileHint.querySelector('span').textContent = 'No file selected';
         return;
       }
-      
+
       const isPdf = f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf');
       if (isPdf) {
         filePrev.innerHTML = `
@@ -361,45 +395,45 @@
     });
 
     // Enhanced create form
-    document.getElementById('createForm').addEventListener('submit', async (e)=>{
+    document.getElementById('createForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const form = e.target;
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
-      
+
       // Show loading state
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Creating...</span>';
       submitBtn.disabled = true;
-      
+
       const fd = new FormData(form);
       // verify_url basic validation
       const vurl = (fd.get('verify_url') || '').toString().trim();
       const vErr = document.getElementById('verify_url_err').querySelector('span');
       vErr.textContent = '';
-      
+
       if (vurl && !/^https?:\/\//i.test(vurl)) {
         vErr.textContent = 'URL should start with http:// or https://';
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
         return;
       }
-      
+
       // ensure file still valid
       const f = fileInput.files && fileInput.files[0];
-      if (!f) { 
-        fileErr.querySelector('span').textContent = 'Please choose a file'; 
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-        return; 
-      }
-      
-      if (!allowedTypes.includes(f.type) || f.size > MAX_FILE_BYTES) {
-        fileErr.querySelector('span').textContent = 'Invalid file'; 
+      if (!f) {
+        fileErr.querySelector('span').textContent = 'Please choose a file';
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
         return;
       }
-      
+
+      if (!allowedTypes.includes(f.type) || f.size > MAX_FILE_BYTES) {
+        fileErr.querySelector('span').textContent = 'Invalid file';
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        return;
+      }
+
       try {
         await AdminAPI.apiCreateCertificate(fd);
         AdminAPI.toast(msg, 'Certificate created successfully!', true);
@@ -407,7 +441,7 @@
         filePrev.innerHTML = '';
         fileHint.querySelector('span').textContent = 'No file selected';
         loadList();
-      } catch(err) { 
+      } catch (err) {
         AdminAPI.toast(msg, err.message || 'Create failed', false);
       } finally {
         submitBtn.innerHTML = originalText;
@@ -416,24 +450,24 @@
     });
 
     // Enhanced filters
-    document.getElementById('filterForm').addEventListener('submit', (e)=>{ 
-      e.preventDefault(); 
-      loadList(); 
+    document.getElementById('filterForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      loadList();
     });
 
     // Enhanced load list with count
-    async function loadList(){
+    async function loadList() {
       const issuer = document.getElementById('f_issuer').value.trim();
       const tag = document.getElementById('f_tag').value.trim();
       const q = document.getElementById('f_q').value.trim();
       const listEl = document.getElementById('list');
       const countEl = document.getElementById('certificateCount');
-      
+
       listEl.innerHTML = '';
       countEl.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Loading...';
-      
+
       // Show skeleton loading
-      for (let i=0;i<3;i++) {
+      for (let i = 0; i < 3; i++) {
         const skeleton = document.createElement('div');
         skeleton.className = 'glass-card rounded-xl p-6 loading-skeleton';
         skeleton.innerHTML = `
@@ -448,25 +482,25 @@
         `;
         listEl.appendChild(skeleton);
       }
-      
+
       try {
         const items = await AdminAPI.apiListCertificates({ issuer, tag, q });
         countEl.innerHTML = `<i class="fas fa-certificate mr-2"></i>${items.length} certificate${items.length !== 1 ? 's' : ''}`;
-        
-        if (!items.length) { 
+
+        if (!items.length) {
           listEl.innerHTML = `
             <div class="text-center py-12">
               <i class="fas fa-inbox text-4xl text-gray-600 mb-4"></i>
               <p class="text-gray-400">No certificates found</p>
               <p class="text-sm text-gray-600 mt-2">Try adjusting your filters or create a new certificate</p>
             </div>
-          `; 
-          return; 
+          `;
+          return;
         }
-        
+
         listEl.innerHTML = '';
         const BASE = AdminAPI.API_BASE;
-        
+
         for (const it of items) {
           const isPdf = it.image_path.toLowerCase().endsWith('.pdf');
           const preview = isPdf
@@ -475,9 +509,9 @@
                  <span class="text-xs text-red-300">PDF</span>
                </div>`
             : `<img src="${BASE}/${it.image_path}" class="h-20 w-20 object-cover rounded-lg border border-gray-700" alt="${it.title}" />`;
-          
-          const tags = (it.tags || '').split(',').map(t=>t.trim()).filter(Boolean)
-            .map(t=>`<span class="inline-flex items-center text-xs bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full border border-blue-800 mr-2 mb-2">${t}</span>`).join('');
+
+          const tags = (it.tags || '').split(',').map(t => t.trim()).filter(Boolean)
+            .map(t => `<span class="inline-flex items-center text-xs bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full border border-blue-800 mr-2 mb-2">${t}</span>`).join('');
 
           const row = document.createElement('article');
           row.className = 'glass-card rounded-xl p-6 hover:bg-gray-800/30 transition-all duration-200';
@@ -531,13 +565,13 @@
           `;
           listEl.appendChild(row);
         }
-      } catch(err){ 
+      } catch (err) {
         listEl.innerHTML = `
           <div class="text-center py-8 text-red-400">
             <i class="fas fa-exclamation-triangle text-2xl mb-3"></i>
             <p>${err.message}</p>
           </div>
-        `; 
+        `;
         countEl.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>Error loading certificates';
       }
     }
@@ -559,7 +593,7 @@
       }, 10);
     }
 
-    function closeEdit(){ 
+    function closeEdit() {
       editModal.querySelector('.scale-95').classList.add('scale-95');
       setTimeout(() => {
         editModal.classList.add('hidden');
@@ -567,15 +601,15 @@
       }, 300);
     }
 
-    function openDelete(id){ 
-      deletingId = id; 
+    function openDelete(id) {
+      deletingId = id;
       delModal.classList.remove('hidden');
       setTimeout(() => {
         delModal.querySelector('.scale-95').classList.remove('scale-95');
       }, 10);
     }
 
-    function closeDelete(){ 
+    function closeDelete() {
       delModal.querySelector('.scale-95').classList.add('scale-95');
       setTimeout(() => {
         delModal.classList.add('hidden');
@@ -584,34 +618,34 @@
     }
 
     // Enhanced edit save
-    document.getElementById('editSave').addEventListener('click', async ()=>{
+    document.getElementById('editSave').addEventListener('click', async () => {
       const saveBtn = document.getElementById('editSave');
       const originalText = saveBtn.innerHTML;
-      
+
       saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Saving...</span>';
       saveBtn.disabled = true;
-      
+
       const payload = {};
       const t = document.getElementById('edit_title').value.trim();
       const tg = document.getElementById('edit_tags').value.trim();
-      
+
       if (t) payload.title = t;
       if (tg) payload.tags = tg;
-      
-      if (!Object.keys(payload).length) { 
-        document.getElementById('edit_err').querySelector('span').textContent = 'Nothing to update'; 
+
+      if (!Object.keys(payload).length) {
+        document.getElementById('edit_err').querySelector('span').textContent = 'Nothing to update';
         saveBtn.innerHTML = originalText;
         saveBtn.disabled = false;
-        return; 
+        return;
       }
-      
+
       try {
         await AdminAPI.apiUpdateCertificate(editingId, payload);
         AdminAPI.toast(msg, 'Certificate updated successfully!', true);
         closeEdit();
         loadList();
-      } catch(err){ 
-        document.getElementById('edit_err').querySelector('span').textContent = err.message || 'Update failed'; 
+      } catch (err) {
+        document.getElementById('edit_err').querySelector('span').textContent = err.message || 'Update failed';
       } finally {
         saveBtn.innerHTML = originalText;
         saveBtn.disabled = false;
@@ -621,21 +655,21 @@
     // Event listeners
     document.getElementById('editCancel').addEventListener('click', closeEdit);
     document.getElementById('delCancel').addEventListener('click', closeDelete);
-    
-    document.getElementById('delConfirm').addEventListener('click', async ()=>{
+
+    document.getElementById('delConfirm').addEventListener('click', async () => {
       const delBtn = document.getElementById('delConfirm');
       const originalText = delBtn.innerHTML;
-      
+
       delBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Deleting...</span>';
       delBtn.disabled = true;
-      
-      try { 
-        await AdminAPI.apiDeleteCertificate(deletingId); 
-        AdminAPI.toast(msg, 'Certificate deleted successfully!', true); 
-        closeDelete(); 
-        loadList(); 
-      } catch(err){ 
-        AdminAPI.toast(msg, err.message || 'Delete failed', false); 
+
+      try {
+        await AdminAPI.apiDeleteCertificate(deletingId);
+        AdminAPI.toast(msg, 'Certificate deleted successfully!', true);
+        closeDelete();
+        loadList();
+      } catch (err) {
+        AdminAPI.toast(msg, err.message || 'Delete failed', false);
       } finally {
         delBtn.innerHTML = originalText;
         delBtn.disabled = false;
@@ -643,56 +677,57 @@
     });
 
     // Enhanced row actions
-    document.getElementById('list').addEventListener('click', async (e)=>{
+    document.getElementById('list').addEventListener('click', async (e) => {
       const btn = e.target.closest('button');
       const fileLabel = e.target.closest('.file-replace-btn');
-      
+
       if (btn) {
         const id = Number(btn.getAttribute('data-id'));
         const action = btn.getAttribute('data-action');
-        
+
         if (action === 'edit') {
           try {
             const items = await AdminAPI.apiListCertificates({});
-            const current = items.find(x=>x.id===id) || {};
+            const current = items.find(x => x.id === id) || {};
             openEdit(id, current);
           } catch { openEdit(id, {}); }
         }
         if (action === 'del') { openDelete(id); }
       }
-      
+
       if (fileLabel) {
         fileLabel.querySelector('input[type="file"]').click();
       }
     });
 
     // Enhanced file replacement
-    document.getElementById('list').addEventListener('change', async (e)=>{
+    document.getElementById('list').addEventListener('change', async (e) => {
       const inp = e.target;
       if (inp.getAttribute('data-action') !== 'replace') return;
       const id = inp.getAttribute('data-id');
       const file = inp.files && inp.files[0];
       if (!file) return;
-      
-      try { 
-        await AdminAPI.apiReplaceFile(id, file); 
-        AdminAPI.toast(msg, 'File replaced successfully!', true); 
-        loadList(); 
-      } catch(err){ 
-        AdminAPI.toast(msg, err.message || 'Replace failed', false); 
-      } finally { 
-        inp.value = ''; 
+
+      try {
+        await AdminAPI.apiReplaceFile(id, file);
+        AdminAPI.toast(msg, 'File replaced successfully!', true);
+        loadList();
+      } catch (err) {
+        AdminAPI.toast(msg, err.message || 'Replace failed', false);
+      } finally {
+        inp.value = '';
       }
     });
 
     // Enhanced logout
-    document.getElementById('logoutBtn').addEventListener('click', ()=>{ 
-      AdminAPI.clearToken(); 
-      location.href='./login.html'; 
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      AdminAPI.clearToken();
+      location.href = './login.html';
     });
 
     // Initialize
     loadList();
   </script>
 </body>
+
 </html>

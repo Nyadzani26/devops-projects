@@ -6,26 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Gift Nemakonde - DevOps Engineer specializing in CI/CD, cloud infrastructure, and automation.">
-    <meta name="author" content="Gift Nemakonde">
-
     <title>Gift Nemakonde | DevOps Engineer</title>
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
-
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
 
 <body>
-
     <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="logo">Gift Nemakonde</div>
             <ul>
-                <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -34,16 +28,162 @@
 
     <!-- Hero -->
     <section class="hero">
+        <div class="container hero-content">
+            <img src="images/profile-placeholder.jpg" alt="Gift Nemakonde" class="hero-avatar">
+            <p class="hero-role">Aspiring DevOps Engineer & Software Engineer</p>
+            <h1>Building Resilient Cloud Infrastructure</h1>
+            <p class="hero-bio">
+                I design and automate scalable systems. Final year ICT student focused on
+                infrastructure as code, CI/CD pipelines, and observability.
+            </p>
+            <div class="btn-group">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
         <div class="container">
-            <div class="hero-content">
-                <img src="images/profile-placeholder.jpg" alt="Gift Nemakonde">
-                <h1>Gift Nemakonde</h1>
-                <p class="subtitle">DevOps Engineer</p>
-                <p>Final year ICT student focused on infrastructure automation, CI/CD pipelines, and cloud deployments.
-                </p>
-                <div class="button-group">
-                    <a href="#projects" class="button">View Projects</a>
-                    <a href="#contact" class="button">Contact</a>
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p class="section-subtitle">Production-ready infrastructure and automation tools built with modern
+                    DevOps practices.</p>
+            </div>
+
+            <div class="grid grid-2">
+                <!-- Project 1 -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-category">Infrastructure Monitoring</span>
+                        <h3>Server Performance Analytics</h3>
+                    </div>
+                    <p>Enterprise-grade bash utility for real-time server metrics. Monitors CPU, memory, and disk I/O
+                        with automated alerting via Slack webhooks. Designed for headless Linux environments.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Linux</span>
+                        <span class="tech-tag">Bash Scripting</span>
+                        <span class="tech-tag">Cron</span>
+                        <span class="tech-tag">Webhooks</span>
+                    </div>
+                    <a href="https://github.com/Nyadzani26/devops-projects/tree/main/server-performance-stats"
+                        target="_blank" class="card-link">View Source</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-category">Automation Tooling</span>
+                        <h3>Log Archive Management</h3>
+                    </div>
+                    <p>Automated log rotation and archival system. Implements retention policies, compression, and
+                        secure storage organization. Solves the "disk full" problem for long-running application
+                        servers.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Shell Automation</span>
+                        <span class="tech-tag">System Administration</span>
+                        <span class="tech-tag">Backup Strategy</span>
+                    </div>
+                    <a href="https://github.com/Nyadzani26/devops-projects/tree/main/log-archive-tool" target="_blank"
+                        class="card-link">View Source</a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-category">CI/CD Pipeline</span>
+                        <h3>Portfolio Deployment System</h3>
+                    </div>
+                    <p>Full-stack deployment pipeline for this portfolio. Features a FastAPI backend with JWT auth,
+                        automated testing via GitHub Actions, and containerized deployment strategy.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">GitHub Actions</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">REST API</span>
+                    </div>
+                    <a href="https://github.com/Nyadzani26/devops-projects" target="_blank" class="card-link">View
+                        Source</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Arsenal</h2>
+                <p class="section-subtitle">A comprehensive toolkit for building, deploying, and managing cloud-native
+                    applications.</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="skills-container">
+                    <div class="skill-item">
+                        <div class="skill-header">Cloud & Infrastructure</div>
+                        <div class="skill-list">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Azure</span>
+                            <span class="skill-tag">Terraform</span>
+                            <span class="skill-tag">Linux</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">Containerization</div>
+                        <div class="skill-list">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Helm</span>
+                            <span class="skill-tag">Compose</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-container">
+                    <div class="skill-item">
+                        <div class="skill-header">CI/CD & Automation</div>
+                        <div class="skill-list">
+                            <span class="skill-tag">GitHub Actions</span>
+                            <span class="skill-tag">Jenkins</span>
+                            <span class="skill-tag">Ansible</span>
+                            <span class="skill-tag">GitLab CI</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">Scripting & Backend</div>
+                        <div class="skill-list">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Bash</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-container">
+                    <div class="skill-item">
+                        <div class="skill-header">Observability</div>
+                        <div class="skill-list">
+                            <span class="skill-tag">Prometheus</span>
+                            <span class="skill-tag">Grafana</span>
+                            <span class="skill-tag">ELK Stack</span>
+                            <span class="skill-tag">Datadog</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">Tools & Workflow</div>
+                        <div class="skill-list">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Jira</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Postman</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,180 +192,35 @@
     <!-- About -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title">About</h2>
-            <p class="section-subtitle">My approach to learning DevOps through hands-on projects and real-world
-                practices</p>
-
-            <div class="about-grid">
-                <div>
-                    <h3>Learning by Building</h3>
-                    <p>I follow a <strong>learn-by-building approach</strong> inspired by real team workflows and
-                        industry best practices. Every project in this portfolio maps to a critical DevOps capability
-                        I've mastered through hands-on implementation.</p>
-
-                    <p>As a final-year ICT student, I'm building a deployable DevOps toolkit while working toward AWS
-                        and Azure certifications. My focus is on shipping iteratively, documenting decisions, and
-                        building in observability from day one.</p>
-
-                    <div class="about-principles">
-                        <h3>Operating Principles</h3>
-                        <ul>
-                            <li>Design pipelines as code, keep them portable and maintainable</li>
-                            <li>Automate testing and deployment before polishing UIs</li>
-                            <li>Document everything — commands, decisions, rollback steps</li>
-                            <li>Ship iteratively, learn from production feedback</li>
-                        </ul>
-                    </div>
+            <div class="about-layout">
+                <div class="about-text">
+                    <h2>Engineering Philosophy</h2>
+                    <p style="font-size: 1.25rem; color: var(--color-text-main); margin-bottom: 2rem;">
+                        "I believe in shipping iteratively, documenting obsessively, and automating everything that
+                        needs to be done more than once."
+                    </p>
+                    <p>
+                        My journey into DevOps started with a curiosity about how massive systems scale.
+                        Now, as I complete my ICT degree, I focus on the intersection of development and
+                        operations—building
+                        the bridges that let code travel safely from a developer's laptop to production servers.
+                    </p>
+                    <p>
+                        I don't just write scripts; I build systems. Whether it's a monitoring dashboard or a
+                        deployment pipeline, I treat infrastructure as a product that needs to be reliable,
+                        scalable, and easy to use.
+                    </p>
                 </div>
 
-                <div>
-                    <div class="highlight-box" style="margin-bottom: 2rem;">
-                        <h4>Career Goals</h4>
-                        <p>Graduate in 2026 with a deployable DevOps toolkit and cloud certifications, ready for
-                            production infrastructure roles.</p>
-                    </div>
-
-                    <div class="highlight-box">
-                        <h4>Current Focus</h4>
-                        <p><strong>1.</strong> Production FastAPI Backend<br>
-                            JWT auth, file uploads, observability</p>
-
-                        <p style="margin-top: 1rem;"><strong>2.</strong> CI/CD Learning Sprint<br>
-                            GitHub Actions pipelines + containers</p>
-
-                        <p style="margin-top: 1rem;"><strong>3.</strong> Cloud Certification Prep<br>
-                            AWS & Azure DevOps paths</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">Real-world DevOps projects demonstrating infrastructure automation, monitoring,
-                and CI/CD capabilities</p>
-            <div class="grid-2 grid">
-
-                <!-- Project 1 -->
-                <div class="card">
-                    <h3>Server Performance Analytics</h3>
-                    <p class="meta">Infrastructure Monitoring</p>
-                    <p>Bash utility that inspects CPU, memory, disk, and process metrics. Generates comprehensive
-                        reports and supports Slack integration for real-time alerts.</p>
-                    <ul class="tech-list">
-                        <li>Linux</li>
-                        <li>Bash</li>
-                        <li>Monitoring</li>
-                        <li>Cron</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><a
-                            href="https://github.com/Nyadzani26/devops-projects/tree/main/server-performance-stats"
-                            target="_blank">View on GitHub →</a></p>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="card">
-                    <h3>Log Archive Management</h3>
-                    <p class="meta">Automation</p>
-                    <p>CLI tool for automated log compression, retention management, and audit trail maintenance.
-                        Designed for VPS deployments requiring historical data preservation.</p>
-                    <ul class="tech-list">
-                        <li>Shell</li>
-                        <li>Automation</li>
-                        <li>Backup</li>
-                        <li>Cron</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><a
-                            href="https://github.com/Nyadzani26/devops-projects/tree/main/log-archive-tool"
-                            target="_blank">View on GitHub →</a></p>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="card">
-                    <h3>Portfolio Deployment Pipeline</h3>
-                    <p class="meta">CI/CD Pipeline</p>
-                    <p>This portfolio site: FastAPI backend with admin dashboard, deployed via GitHub Actions to GitHub
-                        Pages. Demonstrates modern CI/CD practices and cloud deployment.</p>
-                    <ul class="tech-list">
-                        <li>FastAPI</li>
-                        <li>GitHub Actions</li>
-                        <li>CI/CD</li>
-                        <li>Docker</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><a href="https://github.com/Nyadzani26/devops-projects"
-                            target="_blank">View on GitHub →</a></p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <p class="section-subtitle">Comprehensive DevOps toolkit spanning cloud platforms, containerization, and
-                infrastructure automation</p>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages & Scripting</h3>
-                    <ul>
-                        <li>Bash/Shell</li>
-                        <li>Python</li>
-                        <li>YAML</li>
-                        <li>JSON</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Cloud Platforms</h3>
-                    <ul>
-                        <li>AWS</li>
-                        <li>Azure</li>
-                        <li>Google Cloud</li>
-                        <li>DigitalOcean</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Containers & Orchestration</h3>
-                    <ul>
-                        <li>Docker</li>
-                        <li>Kubernetes</li>
-                        <li>Docker Compose</li>
-                        <li>Helm</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>CI/CD & Automation</h3>
-                    <ul>
-                        <li>GitHub Actions</li>
-                        <li>Jenkins</li>
-                        <li>GitLab CI</li>
-                        <li>Ansible</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Infrastructure as Code</h3>
-                    <ul>
-                        <li>Terraform</li>
-                        <li>CloudFormation</li>
-                        <li>Pulumi</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Monitoring & Observability</h3>
-                    <ul>
-                        <li>Prometheus</li>
-                        <li>Grafana</li>
-                        <li>ELK Stack</li>
-                        <li>Datadog</li>
+                <div class="principles-card">
+                    <h3>Core Principles</h3>
+                    <ul class="principles-list">
+                        <li><strong>Infrastructure as Code</strong><br>No manual server config. Everything is versioned.
+                        </li>
+                        <li><strong>Observability First</strong><br>If you can't measure it, you can't improve it.</li>
+                        <li><strong>Security by Design</strong><br>Least privilege and secrets management from day one.
+                        </li>
+                        <li><strong>Continuous Improvement</strong><br>Ship small, fail fast, learn faster.</li>
                     </ul>
                 </div>
             </div>
@@ -235,21 +230,38 @@
     <!-- Certificates -->
     <section id="certificates">
         <div class="container">
-            <h2 class="section-title">Certificates</h2>
-            <p class="section-subtitle">Industry credentials demonstrating continuous learning and technical growth</p>
-            <div id="cert_grid" class="grid"></div>
+            <div class="section-header">
+                <h2>Certifications</h2>
+                <p class="section-subtitle">Verified credentials and continuous professional development.</p>
+            </div>
+            <div id="cert_grid" class="cert-grid"></div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact">
+    <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <p class="section-subtitle">Let's connect and discuss DevOps opportunities</p>
+            <div class="section-header">
+                <h2>Let's Build Together</h2>
+                <p class="section-subtitle">I'm currently open to DevOps and Cloud Engineering opportunities.</p>
+            </div>
+
             <div class="contact-links">
-                <a href="mailto:giftnyadzani28@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/gift-nemakonde" target="_blank">LinkedIn</a>
-                <a href="https://github.com/nyadzani26" target="_blank">GitHub</a>
+                <a href="mailto:giftnyadzani28@gmail.com" class="contact-link">
+                    <span>Email Me</span>
+                    <span
+                        style="font-weight: 400; font-size: 0.9rem; color: var(--color-text-muted);">giftnyadzani28@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/gift-nemakonde" target="_blank" class="contact-link">
+                    <span>LinkedIn</span>
+                    <span style="font-weight: 400; font-size: 0.9rem; color: var(--color-text-muted);">Connect
+                        professionally</span>
+                </a>
+                <a href="https://github.com/nyadzani26" target="_blank" class="contact-link">
+                    <span>GitHub</span>
+                    <span style="font-weight: 400; font-size: 0.9rem; color: var(--color-text-muted);">Review my
+                        code</span>
+                </a>
             </div>
         </div>
     </section>
@@ -257,23 +269,21 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            © 2025 Gift Nemakonde
+            <p>© 2025 Gift Nemakonde. Built with FastAPI & Vanilla JS.</p>
         </div>
     </footer>
 
-    <!-- Lightbox for certificate images -->
+    <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <span class="lightbox-close" onclick="closeLightbox()">×</span>
-            <img id="lightbox-img" src="" alt="">
-        </div>
+        <span class="lightbox-close" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" src="" alt="">
     </div>
 
-    <!-- Certificates API Script -->
+    <!-- Scripts -->
     <script>
         const CERT_API_BASE = (location.hostname === '127.0.0.1' || location.hostname === 'localhost')
             ? 'http://127.0.0.1:8000'
-            : 'http://127.0.0.1:8000'; // TODO: set production backend URL
+            : 'http://127.0.0.1:8000';
 
         const certGrid = document.getElementById('cert_grid');
 
@@ -283,14 +293,14 @@
                 if (!res.ok) throw new Error('Failed to fetch certificates');
                 return res.json();
             } catch (error) {
-                console.error('Error fetching certificates:', error);
+                console.error('Error:', error);
                 return [];
             }
         }
 
         function renderCertificates(items) {
             if (!items.length) {
-                certGrid.innerHTML = '<p class="text-center text-secondary">No certificates available.</p>';
+                certGrid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">No certificates found.</p>';
                 return;
             }
 
@@ -299,29 +309,29 @@
                 const isPdf = cert.image_path.toLowerCase().endsWith('.pdf');
                 const src = `${CERT_API_BASE}/${cert.image_path}`;
 
-                const card = document.createElement('div');
-                card.className = 'cert-card';
+                const item = document.createElement('div');
+                item.className = 'cert-item';
 
+                let thumbContent = '';
                 if (isPdf) {
-                    card.innerHTML = `
-                        <div class="cert-image">
-                            <p>PDF Certificate</p>
-                        </div>
-                        <h3>${cert.title}</h3>
-                        <p class="meta">${cert.issuer} · ${new Date(cert.issue_date).toLocaleDateString()}</p>
-                        <p style="margin-top: 1rem;"><a href="${src}" target="_blank">View PDF →</a></p>
-                    `;
+                    thumbContent = `<div class="cert-thumb"><span style="font-weight:600; color:var(--color-text-muted)">PDF Document</span></div>`;
                 } else {
-                    card.innerHTML = `
-                        <div class="cert-image" onclick="openLightbox('${src}')">
+                    thumbContent = `
+                        <div class="cert-thumb" onclick="openLightbox('${src}')">
                             <img src="${src}" alt="${cert.title}">
                         </div>
-                        <h3>${cert.title}</h3>
-                        <p class="meta">${cert.issuer} · ${new Date(cert.issue_date).toLocaleDateString()}</p>
                     `;
                 }
 
-                certGrid.appendChild(card);
+                item.innerHTML = `
+                    ${thumbContent}
+                    <div class="cert-info">
+                        <h3>${cert.title}</h3>
+                        <p class="cert-meta">${cert.issuer} • ${new Date(cert.issue_date).toLocaleDateString()}</p>
+                        ${isPdf ? `<a href="${src}" target="_blank" style="display:block; margin-top:0.5rem; font-size:0.85rem;">Download PDF →</a>` : ''}
+                    </div>
+                `;
+                certGrid.appendChild(item);
             }
         }
 
@@ -334,23 +344,19 @@
             document.getElementById('lightbox').classList.remove('active');
         }
 
-        // Close lightbox with Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeLightbox();
         });
 
-        // Close lightbox when clicking outside image
         document.getElementById('lightbox').addEventListener('click', (e) => {
             if (e.target.id === 'lightbox') closeLightbox();
         });
 
-        // Load certificates on page load
         (async () => {
             const certificates = await fetchCertificates();
             renderCertificates(certificates);
         })();
     </script>
-
 </body>
 
 </html>

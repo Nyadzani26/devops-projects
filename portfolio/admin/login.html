@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,22 +14,32 @@
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .animate-fade-in-up {
       animation: fadeInUp 0.6s ease-out;
     }
-    
+
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 min-h-screen flex items-center justify-center text-gray-100 font-sans p-4">
+
+<body
+  class="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 min-h-screen flex items-center justify-center text-gray-100 font-sans p-4">
   <div class="w-full max-w-md glass-panel shadow-2xl rounded-2xl px-8 py-10 animate-fade-in-up">
     <!-- Header -->
     <div class="text-center mb-8">
-      <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+      <div
+        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
         <i class="fas fa-lock text-white text-2xl"></i>
       </div>
       <h1 class="text-2xl font-bold text-white mb-2">Certificates Console</h1>
@@ -44,10 +55,9 @@
         <label class="block text-sm font-medium text-gray-300">Username</label>
         <div class="relative">
           <i class="fas fa-user absolute left-4 top-3 text-gray-500"></i>
-          <input id="username" 
-                 class="w-full bg-gray-800 border border-gray-700 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
-                 placeholder="Enter your username" 
-                 required />
+          <input id="username"
+            class="w-full bg-gray-800 border border-gray-700 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+            placeholder="Enter your username" required />
         </div>
       </div>
 
@@ -55,14 +65,14 @@
         <label class="block text-sm font-medium text-gray-300">Password</label>
         <div class="relative">
           <i class="fas fa-key absolute left-4 top-3 text-gray-500"></i>
-          <input id="password" type="password" 
-                 class="w-full bg-gray-800 border border-gray-700 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
-                 placeholder="Enter your password" 
-                 required />
+          <input id="password" type="password"
+            class="w-full bg-gray-800 border border-gray-700 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+            placeholder="Enter your password" required />
         </div>
       </div>
 
-      <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:-translate-y-1 hover:shadow-2xl flex items-center justify-center space-x-3">
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:-translate-y-1 hover:shadow-2xl flex items-center justify-center space-x-3">
         <i class="fas fa-sign-in-alt"></i>
         <span>Sign In to Dashboard</span>
       </button>
@@ -85,28 +95,28 @@
     const form = document.getElementById('loginForm');
     const msg = document.getElementById('msg');
     const submitBtn = form.querySelector('button[type="submit"]');
-    
-    form.addEventListener('submit', async (e)=>{
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const originalText = submitBtn.innerHTML;
-      
+
       // Show loading state
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Authenticating...</span>';
       submitBtn.disabled = true;
-      
+
       const u = document.getElementById('username').value.trim();
       const p = document.getElementById('password').value;
-      
+
       try {
         const data = await AdminAPI.apiLogin(u, p);
         AdminAPI.setToken(data.access_token);
         AdminAPI.toast(msg, 'Login successful! Redirecting...', true);
-        
+
         // Brief delay to show success message
         setTimeout(() => {
           location.href = './dashboard.html';
         }, 1000);
-        
+
       } catch (err) {
         AdminAPI.toast(msg, 'Invalid credentials. Please try again.', false);
         submitBtn.innerHTML = originalText;
@@ -119,11 +129,12 @@
       input.addEventListener('focus', () => {
         input.parentElement.classList.add('ring-2', 'ring-blue-500');
       });
-      
+
       input.addEventListener('blur', () => {
         input.parentElement.classList.remove('ring-2', 'ring-blue-500');
       });
     });
   </script>
 </body>
+
 </html>
