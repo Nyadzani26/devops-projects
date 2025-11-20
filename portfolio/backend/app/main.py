@@ -1,7 +1,7 @@
 # This is the FASTAPI application entry point
 
 import os, uuid, shutil
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from typing import Optional, List
 
 from fastapi import FastAPI, Depends, HTTPException, status
@@ -26,7 +26,12 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:5500",  # VS Code Live Server
+        "http://127.0.0.1:5500",
+        "http://localhost:3000",  # Alternative dev port
+        "https://nyadzani26.github.io"  # Production GitHub Pages
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -75,12 +80,31 @@ ALLOWED_EXTS = {".pdf", ".jpg", ".jpeg", ".png", ".webp"}
 MAX_FILE_MB = 10
 MAX_FILE_BYTES = MAX_FILE_MB * 1024 * 1024
 
+def _parse_date(value: str) -> datetime:
+    """Accepts 'YYYY-MM-DD' or full ISO datetime. Returns datetime at midnight if date-only."""
+    if value is None:
+        return None
+    v = value.strip()
+    if not v:
+        return None
+    # Try date-only first
+    try:
+        d = date.fromisoformat(v)
+        return datetime(d.year, d.month, d.day)
+    except Exception:
+        pass
+    # Fallback to full datetime
+    try:
+        return datetime.fromisoformat(v)
+    except Exception:
+        raise HTTPException(status_code=400, detail="Invalid date format. Use YYYY-MM-DD or ISO datetime.")
+
 @app.post("/api/certificates", response_model=schemas.CertificateOut)
 def create_certificate(
     title: str,
     issuer: str,
-    issue_date: datetime,
-    expiry_date: Optional[datetime] = None,
+    issue_date: str,
+    expiry_date: Optional[str] = None,
     credential_id: Optional[str] = None,
     verify_url: Optional[str] = None,
     tags: Optional[str] = None,
@@ -105,11 +129,20 @@ def create_certificate(
     with open(abs_path, "wb") as buffer:
         shutil.copyfileobj(image.file, buffer)
 
+    # Coerce dates
+    _issue_dt = _parse_date(issue_date)
+    _expiry_dt = _parse_date(expiry_date) if expiry_date is not None else None
+
+    if _issue_dt is None:
+        raise HTTPException(status_code=400, detail="issue_date is required (YYYY-MM-DD)")
+    if _expiry_dt is not None and _expiry_dt < _issue_dt:
+        raise HTTPException(status_code=400, detail="expiry_date cannot be earlier than issue_date")
+
     cert = models.Certificates(
         title=title.strip(),
         issuer=issuer.strip(),
-        issue_date = issue_date,
-        expiry_date = expiry_date,
+        issue_date=_issue_dt,
+        expiry_date=_expiry_dt,
         credential_id = credential_id.strip() if credential_id else None,
         verify_url = verify_url.strip() if verify_url else None,
         image_path = relative_path.replace("\\", "/"),
